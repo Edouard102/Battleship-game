@@ -1,32 +1,163 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+mockup
+Check out the other mockup:
 
-Welcome,
+["PAGE NAME"](assets/images/README-images/mockup/ami-responsive-"PAGE NAME".png)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+Visit the live Website : ["WEBSITE NAME"]("WEBSITE LINK").
+SHORT DESCRIPTION AND DEFINITION OF THE WEBSITE STATUS AND GOALS
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+UX
+Audience Definition
+"WHAT IS THE TARGETED AUDIENCE AND WHO ARE THEY ?"
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The targeted audience for this website is looking for :
+"DEFINITION OF THE TARGETED AUDIENCE BY ASSESSING THEIR NEEDS"
+GENERAL GOALS
+SPECIFIC GOALS
+This website is the best way to answer their needs because :
+It provides SOMETHING THAT ANSWER THEIR NEEDS
+It provides USEFUL ...
+It gives inspiration and motivation for ...
+It provides ...
+It gives information about ...
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+User Stories
+As a first time user, I want the website to be appealing.
+As a first time user, I want the navigation to be easy and intuitive.
+As a first time user, I want the content to be informative but not overwhelming.
+As a first time user, I want to understand immediately what is the website about without the need of looking for it.
+As a first time user, I want to be able to DO THIS ....
+As a returning user, I want to see THAT ....
+As a returning user, I want to check out the different social media links for inspiration and ideas.
+As a returning user, I want to get information ...
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+Design Choices
+Fonts
+Considering the targeted audience AND BUSINESS... GOALS , I CHOOSE THIS BEACAUSE ...
 
----
+color scheme
 
-Happy coding!
+As well an "COLOR" is used for links. An "COLOR" is used for font color. They are distinctive and with a good contrast.
+
+Images
+"HOW AND WHAT IMAGES ARE USED AND FOR WHAT PURPOSES"
+
+Styling and Feeling
+"GENERAL AMD SPECIFIC FEEL OF THE WEBSITE"
+
+
+
+Wireframes
+Desktop
+Tablet
+Mobile
+"THEY CAN BE DONE AS WELL PER PAGES COMPARING THE LOOK OF THE PAGE ON DIFFERENT SCREENS AT ONCE."
+
+Different Design
+"IF THE LIVE WEBSITE IS DIFFERENT FROM THE WIREFRAMES" Some designs are different from the wireframes because of user experience compliance, accessibility, technical skills and time.
+
+Site Map
+"STRUCTURE OF THE WEBSITE IS DIFFERENT IN THIS AND THAT WAY BECAUSE ...."
+
+footer
+Home
+PAGE NAME
+PAGE NAME
+....
+
+
+Features
+Existing Features
+Repeated Features
+On all pages and devices there is ........
+
+FEATURE DESCRIPTION OF THE FEATURE
+
+FEATURE DESCRIPTION OF THE FEATURE
+
+All pages feature .... SOMETHING FOR THIS PURPOSE ....
+
+Home
+DESCRIPTION OF THE FEATURE
+
+PAGE NAME
+DESCRIPTION OF THE FEATURE
+
+PAGE NAME
+DESCRIPTION OF THE FEATURE
+
+
+
+Features to Implement in the Future Versions
+PAGE NAME
+FEATURES TO BE ADDED CHANGES TO BE DONE
+
+PAGE NAME
+FEATURES TO BE ADDED CHANGES TO BE DONE
+
+Additional page
+FEATURES TO BE ADDED
+
+Technologies Used
+Programing Languages
+
+
+
+
+GitPod
+For Integrated Development Environment.
+
+GitHub
+For storing the repository.
+
+GitHub Pages
+For deploying the website live.
+
+
+
+Deployment
+
+Live Deployment
+
+
+
+
+Local Deployment
+
+
+
+
+
+Testing
+
+
+Bugs
+Solved
+Issue :
+Solve :
+
+Issue :
+Solve :
+
+Unsolved
+Issue :
+
+Issue :
+
+
+
+Credit
+
+Aknowledgements :
+Special thanks to all Code Institute's team ("Teacher", Lecturers and Tutors) that are making me more knowledgeable and are making this happen.
+
+Huge thank you to the Slack community, its all the members and all the leads and tutors for their help and support.
+
+Thanks to my mentor .......MENTOR NAME for guiding me through this project.
+
