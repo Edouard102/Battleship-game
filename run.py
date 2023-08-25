@@ -9,7 +9,16 @@ def create_grid(rows, cols):
     """
     Create a grid 5x5
     """
-    grid = [['O' for _ in range(cols)] for _ in range(rows)]
+
+    grid = [['o' for _ in range(cols + 1)] for _ in range(rows + 1)] 
+
+    # Set row headers (latitude indices)
+    for i in range(1, rows + 1):
+        grid[i][0] = str(i)  
+
+    # Set column headers (longitude indices)
+    for j in range(1, cols + 1):
+        grid[0][j] = str(j)  
     return grid
 
 def display_grid(grid):
@@ -29,12 +38,12 @@ def start_game():
     print("David")
 
     player_name= input("Enter your data here: ")
-    print(f"Welcome, {player_name}!")
+    print(f"Welcome, {player_name} :)")
 
 # Display the game rules
     print("\nRules of the Game:")
     print("1. Battleship is a two-player game.")
-    # print("2. Each player sets up their ships on their own grid.")
+    print("2. Each player will have a random placement for these ships on his grid.")
     print("3. Players take turns guessing the coordinates to target the opponent's ships.")
     print("4. The first player to sink all of the opponent's ships wins.")
     
@@ -50,10 +59,41 @@ def start_game():
 
     print("\nHere's the computer's game grid:")
     display_grid(computer_grid)
+# Define the number of the ships   
+    num_ships = 4
+# Define the length of the ships
+    ship_length = 2  
+    for _ in range(num_ships):
+        place_ship(player_grid, ship_length)
 
+    for _ in range(num_ships):
+        place_ship(computer_grid, ship_length)
+
+#play_game(player_grid, computer_grid, num_ships)
 
 #The actual game logic would be add here
-# This would include player turns, ship placement, shooting, etc.
+# This would include player turns,  4 random ship placement , shooting, score rest game etc.
+
+def place_ship(grid, length):
+    """
+    Place a ship of given length randomly on the player's grid.
+    """
+    while True:
+        orientation = random.choice(['horizontal', 'vertical'])
+        if orientation == 'horizontal':
+            row = random.randint(1, len(grid) - 1)
+            col = random.randint(1, len(grid[0]) - length)
+        else:
+            row = random.randint(1, len(grid) - length)
+            col = random.randint(1, len(grid[0]) - 1)
+        
+        # Check if the positions are available
+        if all(grid[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] == 'O'
+               for i in range(length)):
+            for i in range(length):
+                grid[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] = '-'
+            break
+
 
 
 start_game()
