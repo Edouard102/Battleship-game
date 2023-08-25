@@ -76,7 +76,7 @@ def start_game():
 
 def place_ship(grid, length):
     """
-    Place a ship of given length randomly on the player's grid.
+    Place a ship of given length randomly on the player and computer grid.
     """
     while True:
         orientation = random.choice(['horizontal', 'vertical'])
@@ -93,6 +93,54 @@ def place_ship(grid, length):
             for i in range(length):
                 grid[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] = '-'
             break
+
+def play_game(player_grid, computer_grid, num_ships):
+    """
+    Main logic handling player and computer attacks, determines winner.
+    """
+
+    player_ships_remaining = num_ships
+    computer_ships_remaining = num_ships
+    current_player = 'player'
+
+    while player_ships_remaining > 0 and computer_ships_remaining > 0:
+        if current_player == 'player':
+            print("\nPlayer's Turn")
+            guess_row = int(input("Guess Row: "))
+            guess_col = int(input("Guess Col: "))
+            result = handle_guess(computer_grid, guess_row, guess_col)
+
+            if result == 'hit':
+                print("You hit an enemy ship!")
+                computer_ships_remaining -= 1
+            elif result == 'miss':
+                print("You missed.")
+            else:
+                print("You already guessed that.")
+
+            current_player = 'computer'
+        else:
+            print("\nComputer's Turn")
+            guess_row = randint(1, len(player_grid) - 1)
+            guess_col = randint(1, len(player_grid[0]) - 1)
+            result = handle_guess(player_grid, guess_row, guess_col)
+
+            if result == 'hit':
+                print("The computer hit your ship!")
+                player_ships_remaining -= 1
+            elif result == 'miss':
+                print("The computer missed.")
+            else:
+                continue  # Computer guessed a cell it already guessed
+
+            current_player = 'player'
+
+    if player_ships_remaining == 0:
+        print("Congratulations! You sank all enemy ships. You win :(")
+    else:
+        print("The computer sank all your ships. Computer wins :(")
+
+
 
 
 
