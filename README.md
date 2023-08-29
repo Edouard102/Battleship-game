@@ -1,163 +1,217 @@
-mockup
-Check out the other mockup:
 
-["PAGE NAME"](assets/images/README-images/mockup/ami-responsive-"PAGE NAME".png)
+# **eBattleship**
 
-Visit the live Website : ["WEBSITE NAME"]("WEBSITE LINK").
-SHORT DESCRIPTION AND DEFINITION OF THE WEBSITE STATUS AND GOALS
+![mockup](assets/images/images_readme/rps_multiscreen.png)
 
 
 
+#### Visit the live Website : ** **
 
+# Project
 
-UX
-Audience Definition
-"WHAT IS THE TARGETED AUDIENCE AND WHO ARE THEY ?"
+### Project Goals
 
-The targeted audience for this website is looking for :
-"DEFINITION OF THE TARGETED AUDIENCE BY ASSESSING THEIR NEEDS"
-GENERAL GOALS
-SPECIFIC GOALS
-This website is the best way to answer their needs because :
-It provides SOMETHING THAT ANSWER THEIR NEEDS
-It provides USEFUL ...
-It gives inspiration and motivation for ...
-It provides ...
-It gives information about ...
+Immerse yourself in the virtual world of digital battleship! Face off against computer opponents in a classic game.
 
+### User Goals
 
-User Stories
-As a first time user, I want the website to be appealing.
-As a first time user, I want the navigation to be easy and intuitive.
-As a first time user, I want the content to be informative but not overwhelming.
-As a first time user, I want to understand immediately what is the website about without the need of looking for it.
-As a first time user, I want to be able to DO THIS ....
-As a returning user, I want to see THAT ....
-As a returning user, I want to check out the different social media links for inspiration and ideas.
-As a returning user, I want to get information ...
+- Play a game
+- Relaxe and have fun
 
+# UX
 
-Design Choices
-Fonts
-Considering the targeted audience AND BUSINESS... GOALS , I CHOOSE THIS BEACAUSE ...
+### **Audience Definition**
 
-color scheme
+The targeted audience is international with an age range of 11 or 12 years old and above. This audience is either children, or adults that are interested in classic game.
 
-As well an "COLOR" is used for links. An "COLOR" is used for font color. They are distinctive and with a good contrast.
+### **User Stories**
 
-Images
-"HOW AND WHAT IMAGES ARE USED AND FOR WHAT PURPOSES"
+1. As a first time user :
 
-Styling and Feeling
-"GENERAL AMD SPECIFIC FEEL OF THE WEBSITE"
+   - The navigation to be easy and intuitive.
+   - I want to understand immediately what is the website about without the need of looking for it.
 
+2. As a returning user :
+   - Challenge myself on the game.
 
+### **Design Choices**
 
-Wireframes
-Desktop
-Tablet
-Mobile
-"THEY CAN BE DONE AS WELL PER PAGES COMPARING THE LOOK OF THE PAGE ON DIFFERENT SCREENS AT ONCE."
 
-Different Design
-"IF THE LIVE WEBSITE IS DIFFERENT FROM THE WIREFRAMES" Some designs are different from the wireframes because of user experience compliance, accessibility, technical skills and time.
+# Features
 
-Site Map
-"STRUCTURE OF THE WEBSITE IS DIFFERENT IN THIS AND THAT WAY BECAUSE ...."
+#### Home
 
-footer
-Home
-PAGE NAME
-PAGE NAME
-....
+- The home page is composed of the main title: “eBattleship”. This welcome and invites users to discover the website and set the mood and feel of the website.
 
+#### Header
 
-Features
-Existing Features
-Repeated Features
-On all pages and devices there is ........
+- Will display the title of the web site “eRock-Paper-Scissors”
 
-FEATURE DESCRIPTION OF THE FEATURE
+![title.](assets/images/images_readme/rps_title.png)
 
-FEATURE DESCRIPTION OF THE FEATURE
+#### Body
 
-All pages feature .... SOMETHING FOR THIS PURPOSE ....
+- The body will be displayed on 3 parts with the score, the control (choice of the player) and the game (choice made by the player and the computer)
 
-Home
-DESCRIPTION OF THE FEATURE
+## Score area
 
-PAGE NAME
-DESCRIPTION OF THE FEATURE
+- This section will allow the user to follow the score. And reset the game.
 
-PAGE NAME
-DESCRIPTION OF THE FEATURE
+![score.](assets/images/images_readme/rps_score.png)
 
+## Control area
 
+ - This section will allow the user to play the game. The user will be able to easily see icons to make the choice to play the game.
 
-Features to Implement in the Future Versions
-PAGE NAME
-FEATURES TO BE ADDED CHANGES TO BE DONE
+![choice.](assets/images/images_readme/rps_choice.png)
 
-PAGE NAME
-FEATURES TO BE ADDED CHANGES TO BE DONE
+## The play ground
 
-Additional page
-FEATURES TO BE ADDED
+- This section will allow the user to easily see the choice made.
 
-Technologies Used
-Programing Languages
+![playground.](assets/images/images_readme/rps_playground.png)
 
+#### Footer
 
+- The footer will diplays the rules of the game.
 
+![rule.](assets/images/images_readme/rps_rule.png)
 
-GitPod
-For Integrated Development Environment.
+### **Features to Implement in the Future Versions**
 
-GitHub
-For storing the repository.
+- Extension of the game with big bang theory version
+- Add music
+- Contact
+- Copyright
 
-GitHub Pages
-For deploying the website live.
+# Technologies Used
 
+### Programing Languages
 
+This project uses HTML, CSS and JavaScript.
 
-Deployment
+### Frameworks, Libraries and Programs
 
-Live Deployment
+* [Google Fonts](https://fonts.google.com/)  
+  For importing fonts (**_FONT NAME_** and **_FONT NAME_**) into the style.css file.
 
+* [Fontawesome](https://fontawesome.com/icons?d=gallery)  
+  For using icons throughout the website.
 
+* [codeanywhere](https://app.codeanywhere.com/)  
+  For Integrated Development Environment.
 
+ * [GitPod](https://www.gitpod.io/)  
+  For Integrated Development Environment.
 
-Local Deployment
+* [GitHub](https://github.com/)  
+  For storing the repository.
 
+* [GitHub Pages](https://pages.github.com/)  
+  For deploying the website live.
 
+# Deployment
 
+To make this website accessible to the public, eRock-Paper-Scissors has been deployed on [GitHub Pages](https://pages.github.com/) as follow :
 
 
-Testing
+1. Log in to my GitHub account.
+    *  You need to sign up on your account[GitHub](https://github.com/).
 
+2. Go to my **Repositories** and select the repository corresponding :[eRock-Paper-Scissors](https://github.com/Edouard102/eRock-Paper-Scissors).
 
-Bugs
-Solved
-Issue :
-Solve :
+3. Navigate to **Settings** :
 
-Issue :
-Solve :
+![settings](assets/images/images_readme/rps_setting.png)
 
-Unsolved
-Issue :
+4. Scroll down to the **GitHub Pages** section.
+5. Click on the **None** dropdown menu and select the branch to publish : **master**.
+6. Click on **Save**.
+7. The website is now deployed.
 
-Issue :
+The link to the website is found in the **GitHub Pages** section of the repository settings.
 
+![website link](assets/images/images_readme/rps_live.png)
 
+# Testing
 
-Credit
+I have tried the site on several browsers and it works correctly.
 
-Aknowledgements :
+- Safari
+- Google Chrome
+- Microsft Edge
+- Firefox
+
+# Validator testing
+
+- HTML
+
+No errors were found when passing through the official [(Jigsaw) validator]
+
+![Jigsaw validator](assets/images/images_readme/rps_html.png)
+
+- CSS
+
+No errors were returned when passing through the official [W3C validator]
+
+![w3c validator](assets/images/images_readme/rps_css.png)
+
+- JavaScript
+
+No errors were found when passing through the official [Jshint validator]
+
+- The following metrics were returned: 
+
+      * There are 16 functions in this file.
+
+      * Function with the largest signature take 2 arguments, while the median is 1.
+
+      * Largest function has 17 statements in it, while the median is 2.
+
+      * The most complex function has a cyclomatic complexity value of 8 while the median is 1.
+
+ - Accessibility
+
+  -I confirmed the accesbility by running it throught the lighthouse in devtools 
+
+![lighthouse](assets/images/images_readme/rps_lighthouse.png)
+
+# Bugs
+
+### Solved
+
+Issue : undefined in playRound function:
+
+Solution : remove the call new game function from the reset function.
+
+The reasons: The playround function uses an event to select the click button from the player during a game and calling this function during a reset created the bug, as it is not a game but simply a reset.
+
+# Credit
+
+### Content :
+
+[W3schools](https://www.w3schools.com/)  
+For general database on software development.
+
+[Hostinger Tutorials](https://www.hostinger.com/tutorials/how-to-add-favicon-to-website)  
+Provided the link and explanation on how to install the favicon for the website.
+
+[George Dimitriadis](https://stackoverflow.com/questions/23968961/css-how-can-i-make-a-font-readable-over-any-color)  
+For text-shadow tricks used in css to make text more readable.
+
+[GeeksforGeeks](https://www.geeksforgeeks.org/how-to-vertically-center-text-with-css/)  
+For tips on vertical alignment in CSS.
+
+[USERWAY](https://userway.org/blog/html-required-versus-aria-required)  
+For explanation on best use of the required attribute.
+
+[coder coder!](https://coder-coder.com/background-image-opacity/#:~:text=There's%20no%20CSS%20property%20that,for%20the%20background%2Dimage%20property.)
+For explanation and code snippet on overlay on background image used in css.
+
+### Aknowledgements :
+
 Special thanks to all Code Institute's team ("Teacher", Lecturers and Tutors) that are making me more knowledgeable and are making this happen.
 
-Huge thank you to the Slack community, its all the members and all the leads and tutors for their help and support.
+Huge thank you to the [Slack](code-institute-room.slack.com) community, its all the members and all the leads and tutors for their help and support.
 
-Thanks to my mentor .......MENTOR NAME for guiding me through this project.
-
+Thanks to my mentor Precious_Mentor for guiding me through this project.
