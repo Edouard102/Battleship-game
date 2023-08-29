@@ -20,6 +20,7 @@ def create_grid(rows, cols):
         grid[0][j] = str(j)  
     return grid
 
+
 def display_grid(grid):
     """
     Display the grid's current state.
@@ -41,7 +42,7 @@ def place_ship(grid, length):
             row = random.randint(1, len(grid) - length)
             col = random.randint(1, len(grid[0]) - 1)
         
-        # Check if the positions are available
+# Check if the positions are available
         if all(grid[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] == 'o'
                for i in range(length)):
             for i in range(length):
@@ -92,6 +93,10 @@ for _ in range(num_ships):
 for _ in range(num_ships):
     place_ship(computer_grid, ship_length)
 
+player_ships_remaining = num_ships  
+computer_ships_remaining = num_ships
+current_player = 'player'   
+
 def handle_guess(grid, guess_row, guess_col):
     '''
     handling attacks and determining whether a shot has hit a ship or not
@@ -116,27 +121,45 @@ def play_game(player_grid, computer_grid, num_ships):
     player_ships_remaining = num_ships
     computer_ships_remaining = num_ships
     current_player = 'player'
+  
 
-    while player_ships_remaining > 0 and computer_ships_remaining > 0:
-        if current_player == 'player':
-            print("\nPlayer's Turn")
-            #between 1 to 5
-            guess_row = int(input("Guess Row: "))
-            #between 1 to 5 ajouter cette phrance
-            guess_col = int(input("Guess Col: "))
-            result = handle_guess(computer_grid, guess_row, guess_col)
-# ajouterfonction pour verifier erreur
+while player_ships_remaining > 0 and computer_ships_remaining > 0:
+    if current_player == 'player':
+        print("\nPlayer's Turn")
+        
+        while True:
+            try:
+                guess_row = int(input("Guess Row (1-5): "))
+                if 1 <= guess_row <= 5:
+                    break
+                else:
+                    print("Invalid input. Please enter a number between 1 and 5.")
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+        
+        while True:
+            try:
+                guess_col = int(input("Guess Col (1-5): "))
+                if 1 <= guess_col <= 5:
+                    break
+                else:
+                    print("Invalid input. Please enter a number between 1 and 5.")
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+        
+        result = handle_guess(computer_grid, guess_row, guess_col)
 
-            if result == 'hit':
-                print("You hit an enemy ship!")
-                computer_ships_remaining -= 1
-            elif result == 'miss':
-                print("You missed.")
-            else:
-                print("You already guessed that.")
+        if result == 'hit':
+            print("You hit an enemy ship!")
+            computer_ships_remaining -= 1
+        elif result == 'miss':
+            print("You missed.")
+        else:
+            print("You already guessed that.")
 
             current_player = 'computer'
-        else:
+
+    else:
             print("\nComputer's Turn")
             guess_row = randint(1, len(player_grid) - 1)
             guess_col = randint(1, len(player_grid[0]) - 1)
