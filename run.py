@@ -18,6 +18,7 @@ def create_board(rows, cols):
 # Set column headers (longitude indices)
     for j in range(1, cols + 1):
         board[0][j] = str(j)
+
     return board
 
 
@@ -50,35 +51,50 @@ def place_ship(board, length):
                 board[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] = '-'
             break
 
-
-def handle_guess(board, guess_row, guess_col, player_type):
+# handle the guess for the player
+def handle_player_guess(computer_board, guess_row, guess_col, player_type):
     '''
     handling attacks and determining whether a shot has hit a ship or not
+    X = Hit 
+    x = miss
+    G guess Already
     '''
-    if board[guess_row][guess_col] == '-':
-        if player_type == 'player':
-            board[guess_row][guess_col] = 'X'
-        else:
-            board[guess_row][guess_col] = 'H'
+    if computer_board[guess_row][guess_col] == '-':
+        computer_board[guess_row][guess_col] = 'X'
         return 'X'
-    elif board[guess_row][guess_col] == 'o':
-        if player_type == 'player':
-            board[guess_row][guess_col] = 'x'
-        else:
-            board[guess_row][guess_col] = 'M'
+    elif computer_board[guess_row][guess_col] == 'o':
+        computer_board[guess_row][guess_col] = 'x'
         return 'x'
     else:
-        return 'already_guessed'
+        return 'G'
 
+# handle the guess for the computer
+def handle_computer_guess(player_board, guess_row, guess_col, player_type):
+    '''
+    handling attacks and determining whether a shot has hit a ship or not
+    X = Hit 
+    x = miss
+    G guess Already
+    '''
+    if player_board[guess_row][guess_col] == '-':
+        player_board[guess_row][guess_col] = 'X'
+        return 'h'
+    elif player_board[guess_row][guess_col] == 'o':
+        player_board[guess_row][guess_col] = 'x'
+        return 'm'
+    else:
+        return 'G'
+   
 
-
-def play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name):
+def play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name, player_rank):
     """
     Main logic handling player and computer attacks, determines winner.
     """
+    current_player = 'player'
+
     while player_ships_remaining > 0 and computer_ships_remaining > 0:
         if current_player == 'player':
-            print("\nPlayer's Turn")
+            print(f"\n {player_rank} {player_name}s Turn")
 
             while True:
                 try:
@@ -100,16 +116,19 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
                 except ValueError:
                     print("Invalid input. Please enter a valid number.")
 
-            result = handle_guess(computer_board, guess_row, guess_col, 'player')
+            result_player = handle_player_guess(computer_board, guess_row, guess_col,'player')
 
-            if result == 'hit':
+            if result_player == 'X':
                 print("You hit an enemy ship!")
                 computer_ships_remaining -= 1
-            elif result == 'miss':
+            elif result_player == 'x':
                 print("You missed.")
             else:
                 print("You already guessed that.")
-                
+
+# Update player board with the result of the computer's attack
+            player_board[guess_row][guess_col] = result_player
+
             current_player = 'computer'
 
         else:
@@ -117,32 +136,34 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
             guess_row = randint(1, len(player_board) - 1)
             guess_col = randint(1, len(player_board[0]) - 1)
             
-            result = handle_guess(player_board, guess_row, guess_col, 'computer')
+            result_computer = handle_computer_guess(player_board, guess_row, guess_col, 'computer')
 
-            if result == 'hit':
+            if result_computer == 'X':
                 print("The computer hit your ship!")
                 player_ships_remaining -= 1
-            elif result == 'miss':
+            elif result_computer == 'x':
                 print("The computer missed.")
-            else:
-                break
-                continue
+
+# Update computer board with the result of the player's attack
+            computer_board[guess_row][guess_col] = result_computer     
+    
             current_player = 'player'
 
+            
 # Update player and computer board and display it
 
-        print(f"\nHere's {player_name} game board")
-        player_board[guess_row][guess_col] = result
+        print(f"\nHere's {player_rank} {player_name} game board")
         display_board(player_board)
-        
-        print("\nHere's the computer game board")
-        computer_board[guess_row][guess_col] = result
-        display_board(computer_board)   
+        print("Number of Battleships:", player_ships_remaining)
 
-        if player_ships_remaining == 0:
-            print("Congratulations! You sank all enemy ships. You win :(")
-        else:
-            print("The computer sank all your ships. Computer wins :(")
+        print("\nHere's the computer game board")
+        display_board(computer_board)   
+        print("Number of Battleships:", computer_ships_remaining)
+        
+    if player_ships_remaining == 0:
+        print("The computer sank all your ships. Computer wins :(")
+    else:
+        print("Congratulations! You sank all enemy ships. You win :)")
 
 
 def start_game():
@@ -151,10 +172,10 @@ def start_game():
     """
 # display title and ask player name
     print("Battleship")
-    print("Enter your name to start the game")
-
+    print("Enter your Name and Rank to start the game")
     player_name = input("Enter your Name here: ")
-    print(f"Welcome, {player_name} :)")
+    player_rank = input("Enter your Rank here: ")
+    print(f"Welcome, {player_rank} {player_name} :)")
 
 # Display the game rules
     print("\nRules of the Game:")
@@ -166,34 +187,37 @@ def start_game():
     input("Press Enter to start the game...")
 
 # display board for player and computer
-    player_board = create_board(5, 5)
-    computer_board = create_board(5, 5)
+    player_board = create_board(5, 5,)
+    computer_board = create_board(5, 5,)
 
 # Define the number and the length of the ships
     num_ships = 4
     ship_length = 1
 
 # Place ships on player and computer board
-    print(f"\nHere's {player_name} game board")
+    print(f"\nHere's {player_rank} {player_name} game board")
     for _ in range(num_ships):
         place_ship(player_board, ship_length)
     display_board(player_board)
-    
+    print("Number of Battleships:", num_ships)
+
     print("\nHere's the computer game board")
     for _ in range(num_ships):
         place_ship(computer_board, ship_length)
     display_board(computer_board)
+    print("Number of Battleships:", num_ships)
 
     player_ships_remaining = num_ships
     computer_ships_remaining = num_ships
     current_player = 'player'
 
-    play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name)
+    play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name, player_rank)
+#
+# probleme boucle computer
+# Mise à jour de la grille après les attaques et du score HAMDEL GEUSE  COMPUTERU ET JOUEUR
 
-# corriger erreur placedment bateaux
-# Mise à jour de la grille après les attaques et du score
-# fin de parti
+#fin de parti
 # nouveau jeux
-
+# 
 
 start_game()
