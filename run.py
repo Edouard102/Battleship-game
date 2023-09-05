@@ -51,11 +51,12 @@ def place_ship(board, length):
                 board[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] = '-'
             break
 
+
 # handle the guess for the player
 def handle_player_guess(computer_board, guess_row, guess_col, player_type):
     '''
     handling attacks and determining whether a shot has hit a ship or not
-    X = Hit 
+    X = Hit
     x = miss
     G guess Already
     '''
@@ -68,30 +69,30 @@ def handle_player_guess(computer_board, guess_row, guess_col, player_type):
     else:
         return 'G'
 
+
 # handle the guess for the computer
 def handle_computer_guess(player_board, guess_row, guess_col, player_type):
     '''
     handling attacks and determining whether a shot has hit a ship or not
-    X = Hit 
+    X = Hit
     x = miss
     G guess Already
     '''
     if player_board[guess_row][guess_col] == '-':
         player_board[guess_row][guess_col] = 'X'
-        return 'h'
+        return 'X'
     elif player_board[guess_row][guess_col] == 'o':
         player_board[guess_row][guess_col] = 'x'
-        return 'm'
+        return 'x'
     else:
         return 'G'
-   
 
+
+# Main logic of the game
 def play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name, player_rank):
     """
     Main logic handling player and computer attacks, determines winner.
     """
-    current_player = 'player'
-
     while player_ships_remaining > 0 and computer_ships_remaining > 0:
         if current_player == 'player':
             print(f"\n {player_rank} {player_name}s Turn")
@@ -102,9 +103,9 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
                     if 1 <= guess_row <= 5:
                         break
                     else:
-                        print("Invalid input. Please enter a number between 1 and 5.")
+                        print("Please enter a number between 1 and 5.")
                 except ValueError:
-                    print("Invalid input. Please enter a valid number.")
+                    print("Please enter a valid number.")
 
             while True:
                 try:
@@ -112,11 +113,11 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
                     if 1 <= guess_col <= 5:
                         break
                     else:
-                        print("Invalid input. Please enter a number between 1 and 5.")
+                        print("Please enter a number between 1 and 5.")
                 except ValueError:
-                    print("Invalid input. Please enter a valid number.")
+                    print("Please enter a valid number.")
 
-            result_player = handle_player_guess(computer_board, guess_row, guess_col,'player')
+            result_player = handle_player_guess(computer_board, guess_row, guess_col, 'player')
 
             if result_player == 'X':
                 print("You hit an enemy ship!")
@@ -124,10 +125,10 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
             elif result_player == 'x':
                 print("You missed.")
             else:
-                print("You already guessed that.")
+                print("You already guessed.")
 
-# Update player board with the result of the computer's attack
-            player_board[guess_row][guess_col] = result_player
+# Update computer board with the result of the computer's attack
+            computer_board[guess_row][guess_col] = result_player
 
             current_player = 'computer'
 
@@ -135,7 +136,7 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
             print("\nComputer's Turn")
             guess_row = randint(1, len(player_board) - 1)
             guess_col = randint(1, len(player_board[0]) - 1)
-            
+
             result_computer = handle_computer_guess(player_board, guess_row, guess_col, 'computer')
 
             if result_computer == 'X':
@@ -144,28 +145,28 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
             elif result_computer == 'x':
                 print("The computer missed.")
 
-# Update computer board with the result of the player's attack
-            computer_board[guess_row][guess_col] = result_computer     
-    
+# Update player board with the result of the player's attack
+            player_board[guess_row][guess_col] = result_computer
+
             current_player = 'player'
 
-            
-# Update player and computer board and display it
 
+# Update player and computer board and display it
         print(f"\nHere's {player_rank} {player_name} game board")
         display_board(player_board)
         print("Number of Battleships:", player_ships_remaining)
 
         print("\nHere's the computer game board")
-        display_board(computer_board)   
+        display_board(computer_board)
         print("Number of Battleships:", computer_ships_remaining)
-        
+
     if player_ships_remaining == 0:
         print("The computer sank all your ships. Computer wins :(")
     else:
         print("Congratulations! You sank all enemy ships. You win :)")
 
 
+# function to start the game
 def start_game():
     """
     Starts the Battleship game by guiding the player through the initial steps.
@@ -212,12 +213,11 @@ def start_game():
     current_player = 'player'
 
     play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name, player_rank)
-#
-# probleme boucle computer
-# Mise à jour de la grille après les attaques et du score HAMDEL GEUSE  COMPUTERU ET JOUEUR
 
-#fin de parti
-# nouveau jeux
-# 
 
 start_game()
+
+# probleme boucle computer
+# Mise à jour de la grille après les attaques et du score HAMDEL GEUSE  COMPUTERU ET JOUEUR
+# fin de parti
+# nouveau jeux
