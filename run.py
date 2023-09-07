@@ -175,6 +175,22 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
         print("Congratulations! You sank all enemy ships. You win :)")
 
 
+# function to start a new game
+def new_game(player_name, player_rank):
+    """
+    Function that asks if we want to play again at the end of the game
+    """
+    while True:
+        player = input(f"{player_rank} {player_name} Do you want to play again? (y/n): ")
+        if player == 'y':
+            start_game()  
+        elif player == 'n':
+            print(f"{player_rank} {player_name}Thanks for playing! Goodbye.:)")
+            exit()
+        else:
+            print("Answer with 'Yes' (or 'Y') or 'No' (or 'N').")
+
+
 # function to start the game
 def start_game():
     """
@@ -223,11 +239,11 @@ def start_game():
     current_player = 'player'
 
     play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name, player_rank)
-
+    
+ #  Call the function at the end of the game to start a new one.
+    new_game(player_name, player_rank)
 
 start_game()
 
-# probleme boucle computer
-# Mise à jour de la grille après les attaques et du score HAMDEL GEUSE  COMPUTERU ET JOUEUR
 # fin de parti
 # nouveau jeux
