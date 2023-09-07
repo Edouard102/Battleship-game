@@ -3,7 +3,7 @@
 
 ![mockup](assets/images/images_readme/rps_multiscreen.png)
 
-
+https://ebattleship-b7049253739c.herokuapp.com/
 
 #### Visit the live Website : ** **
 
@@ -88,15 +88,10 @@ The targeted audience is international with an age range of 11 or 12 years old a
 
 ### Programing Languages
 
-This project uses HTML, CSS and JavaScript.
+This project uses Python.
 
 ### Frameworks, Libraries and Programs
 
-* [Google Fonts](https://fonts.google.com/)  
-  For importing fonts (**_FONT NAME_** and **_FONT NAME_**) into the style.css file.
-
-* [Fontawesome](https://fontawesome.com/icons?d=gallery)  
-  For using icons throughout the website.
 
 * [codeanywhere](https://app.codeanywhere.com/)  
   For Integrated Development Environment.
@@ -107,12 +102,12 @@ This project uses HTML, CSS and JavaScript.
 * [GitHub](https://github.com/)  
   For storing the repository.
 
-* [GitHub Pages](https://pages.github.com/)  
+* [heroku Pages](https://dashboard.heroku.com/apps)  
   For deploying the website live.
 
 # Deployment
 
-To make this website accessible to the public, eRock-Paper-Scissors has been deployed on [GitHub Pages](https://pages.github.com/) as follow :
+To make this website accessible to the public, eRock-Paper-Scissors has been deployed on [heroku Pages](https://dashboard.heroku.com/apps)  as follow :
 
 
 1. Log in to my GitHub account.

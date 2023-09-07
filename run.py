@@ -5,21 +5,30 @@ from random import randint
 # python3 run.py
 
 
-def create_board(rows, cols):
-    """
-    Create a grid 5x5
-    """
-    board = [['o' for _ in range(cols + 1)] for _ in range(rows + 1)]
+class BattleshipGame:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.num_ships = 4
+        self.ship_length = 1
+        self.player_board = self.create_board()
+        self.computer_board = self.create_board()
 
-# Set row headers (latitude indices)
-    for i in range(1, rows + 1):
-        board[i][0] = str(i)
+    def create_board(self):
+        """
+        Create a grid 5x5
+        """
+        board = [['o' for _ in range(self.cols + 1)] for _ in range(self.rows + 1)]
 
-# Set column headers (longitude indices)
-    for j in range(1, cols + 1):
-        board[0][j] = str(j)
+    # Set row headers (latitude indices)
+        for i in range(1, self.rows + 1):
+            board[i][0] = str(i)
 
-    return board
+    # Set column headers (longitude indices)
+        for j in range(1, self.cols + 1):
+            board[0][j] = str(j)
+
+        return board
 
 
 def display_board(board):
@@ -188,8 +197,9 @@ def start_game():
     input("Press Enter to start the game...")
 
 # display board for player and computer
-    player_board = create_board(5, 5,)
-    computer_board = create_board(5, 5,)
+    game = BattleshipGame(5, 5)
+    player_board = game.create_board()
+    computer_board = game.create_board()
 
 # Define the number and the length of the ships
     num_ships = 4
