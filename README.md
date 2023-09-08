@@ -5,7 +5,7 @@
 
 
 
-#### Visit the live Website : ** https://ebattleship-b7049253739c.herokuapp.com/**
+#### Visit the live Website : https://ebattleship-b7049253739c.herokuapp.com/
 
 # Project
 
@@ -39,8 +39,8 @@ The targeted audience is international with an age range of 11 to 75 years old p
 
 #### Welcoming
 
-- When we start the game by asking name and the rank of the player.
-- An explanetion of the game is given to the player.
+- We start the game by asking name and the rank of the player.
+- An explanation of the game is given to the player.
 
 #### Randoom board is generating
 
@@ -92,7 +92,7 @@ This project uses Python.
 
 # Testing
 
-I have tested on my local termintor give by code institue trough 
+I have tested on my local terminal give by code institue trough 
 
 # Validator testing
 
@@ -100,21 +100,19 @@ I have tested on my local termintor give by code institue trough
 
 No major errors were found when passing through the PEP8
 
-Errors find is  - E501: line too long error 
-                - W291 trailing whitespace
-
-
+Errors find is 
+ - E501: line too long
 
 # Bugs
+- example of bug
+IndentationError: unindent does not match any outer indentation level
+UnboundLocalError: cannot access local variable 'num_ships' where it is not associated with a value 
 
-### Solved
-
-Issue : 
-
-Solution : 
+- No bug remainings
 
 # Credit
- - Code institue for the deployement and the idee for random
+ - Code institue for the deployement terminal and for random function.
+ - Wikipedia for the battleship game
 
 ### Aknowledgements :
 
