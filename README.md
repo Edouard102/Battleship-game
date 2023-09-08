@@ -3,9 +3,9 @@
 
 ![mockup](assets/images/images_readme/rps_multiscreen.png)
 
-https://ebattleship-b7049253739c.herokuapp.com/
 
-#### Visit the live Website : ** **
+
+#### Visit the live Website : ** https://ebattleship-b7049253739c.herokuapp.com/**
 
 # Project
 
@@ -22,7 +22,7 @@ Immerse yourself in the virtual world of digital battleship! Face off against co
 
 ### **Audience Definition**
 
-The targeted audience is international with an age range of 11 or 12 years old and above. This audience is either children, or adults that are interested in classic game.
+The targeted audience is international with an age range of 11 to 75 years old people. This audience is either children, or adults that are interested in classic game.
 
 ### **User Stories**
 
@@ -34,52 +34,34 @@ The targeted audience is international with an age range of 11 or 12 years old a
 2. As a returning user :
    - Challenge myself on the game.
 
-### **Design Choices**
-
 
 # Features
 
-#### Home
+#### Welcoming
 
-- The home page is composed of the main title: “eBattleship”. This welcome and invites users to discover the website and set the mood and feel of the website.
+- When we start the game by asking name and the rank of the player.
+- An explanetion of the game is given to the player.
 
-#### Header
+#### Randoom board is generating
 
-- Will display the title of the web site “eRock-Paper-Scissors”
+- Will display a board for the player and the computer.
 
-![title.](assets/images/images_readme/rps_title.png)
 
-#### Body
+#### 
 
-- The body will be displayed on 3 parts with the score, the control (choice of the player) and the game (choice made by the player and the computer)
 
-## Score area
 
-- This section will allow the user to follow the score. And reset the game.
 
-![score.](assets/images/images_readme/rps_score.png)
-
-## Control area
-
- - This section will allow the user to play the game. The user will be able to easily see icons to make the choice to play the game.
 
 ![choice.](assets/images/images_readme/rps_choice.png)
 
-## The play ground
 
-- This section will allow the user to easily see the choice made.
-
-![playground.](assets/images/images_readme/rps_playground.png)
-
-#### Footer
-
-- The footer will diplays the rules of the game.
-
-![rule.](assets/images/images_readme/rps_rule.png)
 
 ### **Features to Implement in the Future Versions**
 
-- Extension of the game with big bang theory version
+- Extension of the game with diferente sice of ships 
+- Allow player to place the ships on the board
+- Have a biger board game 
 - Add music
 - Contact
 - Copyright
@@ -107,101 +89,32 @@ This project uses Python.
 
 # Deployment
 
-To make this website accessible to the public, eRock-Paper-Scissors has been deployed on [heroku Pages](https://dashboard.heroku.com/apps)  as follow :
-
-
-1. Log in to my GitHub account.
-    *  You need to sign up on your account[GitHub](https://github.com/).
-
-2. Go to my **Repositories** and select the repository corresponding :[eRock-Paper-Scissors](https://github.com/Edouard102/eRock-Paper-Scissors).
-
-3. Navigate to **Settings** :
-
-![settings](assets/images/images_readme/rps_setting.png)
-
-4. Scroll down to the **GitHub Pages** section.
-5. Click on the **None** dropdown menu and select the branch to publish : **master**.
-6. Click on **Save**.
-7. The website is now deployed.
-
-The link to the website is found in the **GitHub Pages** section of the repository settings.
-
-![website link](assets/images/images_readme/rps_live.png)
 
 # Testing
 
-I have tried the site on several browsers and it works correctly.
-
-- Safari
-- Google Chrome
-- Microsft Edge
-- Firefox
+I have tested on my local termintor give by code institue trough 
 
 # Validator testing
 
-- HTML
+- PEP8
 
-No errors were found when passing through the official [(Jigsaw) validator]
+No major errors were found when passing through the PEP8
 
-![Jigsaw validator](assets/images/images_readme/rps_html.png)
+Errors find is  - E501: line too long error 
+                - W291 trailing whitespace
 
-- CSS
 
-No errors were returned when passing through the official [W3C validator]
-
-![w3c validator](assets/images/images_readme/rps_css.png)
-
-- JavaScript
-
-No errors were found when passing through the official [Jshint validator]
-
-- The following metrics were returned: 
-
-      * There are 16 functions in this file.
-
-      * Function with the largest signature take 2 arguments, while the median is 1.
-
-      * Largest function has 17 statements in it, while the median is 2.
-
-      * The most complex function has a cyclomatic complexity value of 8 while the median is 1.
-
- - Accessibility
-
-  -I confirmed the accesbility by running it throught the lighthouse in devtools 
-
-![lighthouse](assets/images/images_readme/rps_lighthouse.png)
 
 # Bugs
 
 ### Solved
 
-Issue : undefined in playRound function:
+Issue : 
 
-Solution : remove the call new game function from the reset function.
-
-The reasons: The playround function uses an event to select the click button from the player during a game and calling this function during a reset created the bug, as it is not a game but simply a reset.
+Solution : 
 
 # Credit
-
-### Content :
-
-[W3schools](https://www.w3schools.com/)  
-For general database on software development.
-
-[Hostinger Tutorials](https://www.hostinger.com/tutorials/how-to-add-favicon-to-website)  
-Provided the link and explanation on how to install the favicon for the website.
-
-[George Dimitriadis](https://stackoverflow.com/questions/23968961/css-how-can-i-make-a-font-readable-over-any-color)  
-For text-shadow tricks used in css to make text more readable.
-
-[GeeksforGeeks](https://www.geeksforgeeks.org/how-to-vertically-center-text-with-css/)  
-For tips on vertical alignment in CSS.
-
-[USERWAY](https://userway.org/blog/html-required-versus-aria-required)  
-For explanation on best use of the required attribute.
-
-[coder coder!](https://coder-coder.com/background-image-opacity/#:~:text=There's%20no%20CSS%20property%20that,for%20the%20background%2Dimage%20property.)
-For explanation and code snippet on overlay on background image used in css.
+ - Code institue for the deployement and the idee for random
 
 ### Aknowledgements :
 

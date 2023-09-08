@@ -18,7 +18,8 @@ class BattleshipGame:
         """
         Create a grid 5x5
         """
-        board = [['o' for _ in range(self.cols + 1)] for _ in range(self.rows + 1)]
+        board = [['o' for _ in range(self.cols + 1)]
+                 for _ in range(self.rows + 1)]
 
     # Set row headers (latitude indices)
         for i in range(1, self.rows + 1):
@@ -31,12 +32,18 @@ class BattleshipGame:
         return board
 
 
-def display_board(board):
+def display_board(board, hide_ships=False):
     """
     Display the grid's current state.
     """
     for row in board:
-        print(' '.join(row))
+        row_display = []
+        for cell in row:
+            if hide_ships and cell == '-':
+                row_display.append('o')
+            else:
+                row_display.append(cell)
+        print(' '.join(row_display))
 
 
 def place_ship(board, length):
@@ -54,7 +61,8 @@ def place_ship(board, length):
             col = random.randint(1, len(board[0]) - 1)
 
 # Check if the positions are available
-        if all(board[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] == 'o'
+        if all(board[row + (i if orientation == 'vertical' else 0)]
+               [col + (i if orientation == 'horizontal' else 0)] == 'o'
                for i in range(length)):
             for i in range(length):
                 board[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] = '-'
@@ -98,13 +106,15 @@ def handle_computer_guess(player_board, guess_row, guess_col, player_type):
 
 
 # Main logic of the game
-def play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name, player_rank):
+def play_game(player_board, computer_board, num_ships, player_ships_remaining,
+              computer_ships_remaining,
+              current_player, name, rank):
     """
     Main logic handling player and computer attacks, determines winner.
     """
     while player_ships_remaining > 0 and computer_ships_remaining > 0:
         if current_player == 'player':
-            print(f"\n {player_rank} {player_name}s Turn")
+            print(f"\n {rank} {name}s Turn")
 
             while True:
                 try:
@@ -126,7 +136,8 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
                 except ValueError:
                     print("Please enter a valid number.")
 
-            result_player = handle_player_guess(computer_board, guess_row, guess_col, 'player')
+            result_player = handle_player_guess(computer_board,
+                                                guess_row, guess_col, 'player')
 
             if result_player == 'X':
                 print("You hit an enemy ship!")
@@ -161,12 +172,12 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
 
 
 # Update player and computer board and display it
-        print(f"\nHere's {player_rank} {player_name} game board")
+        print(f"\nHere's {rank} {name} game board")
         display_board(player_board)
         print("Number of Battleships:", player_ships_remaining)
 
         print("\nHere's the computer game board")
-        display_board(computer_board)
+        display_board(computer_board, hide_ships=True)
         print("Number of Battleships:", computer_ships_remaining)
 
     if player_ships_remaining == 0:
@@ -176,19 +187,19 @@ def play_game(player_board, computer_board, num_ships, player_ships_remaining, c
 
 
 # function to start a new game
-def new_game(player_name, player_rank):
+def new_game(name, rank):
     """
     Function that asks if we want to play again at the end of the game
     """
     while True:
-        player = input(f"{player_rank} {player_name} Do you want to play again? (y/n): ")
+        player = input(f"{rank} {name} Do you want to play? (y/n): ")
         if player == 'y':
-            start_game()  
+            start_game()
         elif player == 'n':
-            print(f"{player_rank} {player_name}Thanks for playing! Goodbye.:)")
+            print(f"{rank} {name} Thanks for playing! Goodbye.:)")
             exit()
         else:
-            print("Answer with 'Yes' (or 'Y') or 'No' (or 'N').")
+            print("Answer with 'y' or 'n'.")
 
 
 # function to start the game
@@ -197,17 +208,18 @@ def start_game():
     Starts the Battleship game by guiding the player through the initial steps.
     """
 # display title and ask player name
-    print("Battleship")
+    print("eBattleship")
     print("Enter your Name and Rank to start the game")
-    player_name = input("Enter your Name here: ")
-    player_rank = input("Enter your Rank here: ")
-    print(f"Welcome, {player_rank} {player_name} :)")
+    name = input("Enter your Name here: ")
+    rank = input("Enter your Rank here: ")
+    print(f"Welcome, {rank} {name} :)")
 
 # Display the game rules
     print("\nRules of the Game:")
     print("1. Battleship is a two-player game.")
-    print("2. Each player will have a random placement for 4 ships on his board.")
-    print("3. Players take turns guessing the coordinates to target the opponent's ships.")
+    print("2. Each player will have a random placement on board.")
+    print("2. Each player will have for 4 ships on his board.")
+    print("3. Players take turns guessing the coordinates of the ships.")
     print("4. The first player to sink all of the opponent's ships wins.")
 
     input("Press Enter to start the game...")
@@ -222,7 +234,7 @@ def start_game():
     ship_length = 1
 
 # Place ships on player and computer board
-    print(f"\nHere's {player_rank} {player_name} game board")
+    print(f"\nHere's {rank} {name} game board")
     for _ in range(num_ships):
         place_ship(player_board, ship_length)
     display_board(player_board)
@@ -231,19 +243,18 @@ def start_game():
     print("\nHere's the computer game board")
     for _ in range(num_ships):
         place_ship(computer_board, ship_length)
-    display_board(computer_board)
+    display_board(computer_board, hide_ships=True)
     print("Number of Battleships:", num_ships)
 
     player_ships_remaining = num_ships
     computer_ships_remaining = num_ships
     current_player = 'player'
 
-    play_game(player_board, computer_board, num_ships, player_ships_remaining, computer_ships_remaining, current_player, player_name, player_rank)
-    
- #  Call the function at the end of the game to start a new one.
-    new_game(player_name, player_rank)
+    play_game(player_board, computer_board, num_ships, player_ships_remaining,
+              computer_ships_remaining,
+              current_player, name, rank)
+
+    new_game(name, rank)
+
 
 start_game()
-
-# fin de parti
-# nouveau jeux
