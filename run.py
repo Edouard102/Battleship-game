@@ -2,8 +2,6 @@
 import random
 from random import randint
 
-# python3 run.py
-
 
 class BattleshipGame:
     def __init__(self, rows, cols):
@@ -196,7 +194,7 @@ def new_game(name, rank):
         if player == 'y':
             start_game()
         elif player == 'n':
-            print(f"{rank} {name} Thanks for playing! Goodbye.:)")
+            print(f"{rank} {name} Thanks you for playing! Goodbye.:)")
             exit()
         else:
             print("Answer with 'y' or 'n'.")
@@ -221,7 +219,7 @@ def start_game():
     print(". Each player will have for 4 ships on his board.")
     print(". Players take turns guessing the coordinates of the ships.")
     print(". The first player to sink all of the opponent's ships wins.")
-    print(". The boats will be 5represented by O")
+    print(". The boats will be represented by O")
     print(". Successful shot will be represented  by X")
     print(". Missed shot  will be represented  by x")
 

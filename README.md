@@ -1,11 +1,11 @@
 
 # **eBattleship**
 
-![mockup](assets/images/images_readme/rps_multiscreen.png)
+![mockup](assets/images_readme/multiscreen.png)
 
+https://ui.dev/amiresponsive?url=https://ebattleship-b7049253739c.herokuapp.com/
 
-
-#### Visit the live Website : https://ebattleship-b7049253739c.herokuapp.com/
+#### Visit the live Website : **https://ebattleship-b7049253739c.herokuapp.com/**
 
 # Project
 
@@ -40,35 +40,37 @@ The targeted audience is international with an age range of 11 to 75 years old p
 #### Welcoming
 
 - We start the game by asking name and the rank of the player.
-- An explanation of the game is given to the player.
+- An explanation of the game is provided to the player.
 
-#### Randoom board is generating
+![welcome](assets/images_readme/wellcome.png)
+![rules](assets/images_readme/rules.png)
 
-- Will display a board for the player and the computer.
+#### Random board is generating
 
+- Will display a game board for both the player and the computer.
 
-#### 
+![board](assets/images_readme/board.png)
 
+- Input validation and error checking.
 
+![validation](assets/images_readme/validation.png)
 
+- Ask if you want to play again at the end of the game.
 
-
-![choice.](assets/images/images_readme/rps_choice.png)
-
-
+![new_game](assets/images_readme/new_game.png)
 
 ### **Features to Implement in the Future Versions**
 
-- Extension of the game with diferente sice of ships 
+- Extension of the game with differente sice of ships 
 - Allow player to place the ships on the board
-- Have a biger board game 
+- Have a bigger board game 
 - Add music
 - Contact
 - Copyright
 
 # Technologies Used
 
-### Programing Languages
+### Programming Languages
 
 This project uses Python.
 
@@ -89,6 +91,16 @@ This project uses Python.
 
 # Deployment
 
+The project was deployed following the instructions provided by the Code Institute.
+      
+- Create new app in heroku
+  - Set up the setting in Heroku
+    * Add buildpack (Python, node.js,)
+  - Set up the deploy in Heroku
+    * Link Heroku app to the repository Githup
+    * Chose the deployment method
+ - Click on view to see the app
+
 
 # Testing
 
@@ -96,9 +108,9 @@ I have tested on my local terminal give by code institue trough
 
 # Validator testing
 
-- PEP8
+- PEP 8
 
-No major errors were found when passing through the PEP8
+No major errors were found when passing through the PEP 8
 
 Errors find is 
  - E501: line too long
@@ -114,7 +126,7 @@ UnboundLocalError: cannot access local variable 'num_ships' where it is not asso
  - Code institue for the deployement terminal and for random function.
  - Wikipedia for the battleship game
 
-### Aknowledgements :
+### Acknowledgments. :
 
 Special thanks to all Code Institute's team ("Teacher", Lecturers and Tutors) that are making me more knowledgeable and are making this happen.
 
