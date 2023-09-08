@@ -18,7 +18,7 @@ class BattleshipGame:
         """
         Create a grid 5x5
         """
-        board = [['o' for _ in range(self.cols + 1)]
+        board = [['~' for _ in range(self.cols + 1)]
                  for _ in range(self.rows + 1)]
 
     # Set row headers (latitude indices)
@@ -39,8 +39,8 @@ def display_board(board, hide_ships=False):
     for row in board:
         row_display = []
         for cell in row:
-            if hide_ships and cell == '-':
-                row_display.append('o')
+            if hide_ships and cell == 'O':
+                row_display.append('~')
             else:
                 row_display.append(cell)
         print(' '.join(row_display))
@@ -62,10 +62,10 @@ def place_ship(board, length):
 
 # Check if the positions are available
         if all(board[row + (i if orientation == 'vertical' else 0)]
-               [col + (i if orientation == 'horizontal' else 0)] == 'o'
+               [col + (i if orientation == 'horizontal' else 0)] == '~'
                for i in range(length)):
             for i in range(length):
-                board[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] = '-'
+                board[row + (i if orientation == 'vertical' else 0)][col + (i if orientation == 'horizontal' else 0)] = 'O'
             break
 
 
@@ -77,10 +77,10 @@ def handle_player_guess(computer_board, guess_row, guess_col, player_type):
     x = miss
     G guess Already
     '''
-    if computer_board[guess_row][guess_col] == '-':
+    if computer_board[guess_row][guess_col] == 'O':
         computer_board[guess_row][guess_col] = 'X'
         return 'X'
-    elif computer_board[guess_row][guess_col] == 'o':
+    elif computer_board[guess_row][guess_col] == '~':
         computer_board[guess_row][guess_col] = 'x'
         return 'x'
     else:
@@ -95,10 +95,10 @@ def handle_computer_guess(player_board, guess_row, guess_col, player_type):
     x = miss
     G guess Already
     '''
-    if player_board[guess_row][guess_col] == '-':
+    if player_board[guess_row][guess_col] == 'O':
         player_board[guess_row][guess_col] = 'X'
         return 'X'
-    elif player_board[guess_row][guess_col] == 'o':
+    elif player_board[guess_row][guess_col] == '~':
         player_board[guess_row][guess_col] = 'x'
         return 'x'
     else:
@@ -216,11 +216,14 @@ def start_game():
 
 # Display the game rules
     print("\nRules of the Game:")
-    print("1. Battleship is a two-player game.")
-    print("2. Each player will have a random placement on board.")
-    print("2. Each player will have for 4 ships on his board.")
-    print("3. Players take turns guessing the coordinates of the ships.")
-    print("4. The first player to sink all of the opponent's ships wins.")
+    print(". Battleship is a two-player game.")
+    print(". Each player will have a random placement on board.")
+    print(". Each player will have for 4 ships on his board.")
+    print(". Players take turns guessing the coordinates of the ships.")
+    print(". The first player to sink all of the opponent's ships wins.")
+    print(". The boats will be 5represented by O")
+    print(". Successful shot will be represented  by X")
+    print(". Missed shot  will be represented  by x")
 
     input("Press Enter to start the game...")
 
