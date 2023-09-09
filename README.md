@@ -42,7 +42,8 @@ The targeted audience is international with an age range of 11 to 75 years old p
 - We start the game by asking name and the rank of the player.
 - An explanation of the game is provided to the player.
 
-![welcome](assets/images_readme/wellcome.png)
+![welcome](assets/images_readme/welcome.png)
+
 ![rules](assets/images_readme/rules.png)
 
 #### Random board is generating
@@ -61,7 +62,7 @@ The targeted audience is international with an age range of 11 to 75 years old p
 
 ### **Features to Implement in the Future Versions**
 
-- Extension of the game with differente sice of ships 
+- Extension of the game with different size of ships 
 - Allow player to place the ships on the board
 - Have a bigger board game 
 - Add music
@@ -104,7 +105,7 @@ The project was deployed following the instructions provided by the Code Institu
 
 # Testing
 
-I have tested on my local terminal give by code institue trough 
+I have tested on my local terminal provided by code institute.
 
 # Validator testing
 
@@ -112,24 +113,24 @@ I have tested on my local terminal give by code institue trough
 
 No major errors were found when passing through the PEP 8
 
-Errors find is 
+Error find is 
  - E501: line too long
 
 # Bugs
-- example of bug
-IndentationError: unindent does not match any outer indentation level
-UnboundLocalError: cannot access local variable 'num_ships' where it is not associated with a value 
+- example of bug :
+    - IndentationError: unindent does not match any outer indentation level
+    - UnboundLocalError: cannot access local variable 'num_ships' where it is not associated with a value 
 
 - No bug remainings
 
 # Credit
- - Code institue for the deployement terminal and for random function.
+ - Code institute for the deployment terminal and for random function.
  - Wikipedia for the battleship game
 
 ### Acknowledgments. :
 
 Special thanks to all Code Institute's team ("Teacher", Lecturers and Tutors) that are making me more knowledgeable and are making this happen.
 
-Huge thank you to the [Slack](code-institute-room.slack.com) community, its all the members and all the leads and tutors for their help and support.
+Huge thank you to the [Slack](code-institute-room.slack.com) community, all its members and all the leads and tutors for their help and support.
 
 Thanks to my mentor Precious_Mentor for guiding me through this project.
