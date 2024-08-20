@@ -3,7 +3,7 @@
 
 ![mockup](assets/images_readme/multiscreen.png)
 
-https://ui.dev/amiresponsive?url=https://ebattleship-b7049253739c.herokuapp.com/
+https://ui.dev/amiresponsive?url=https://ebattleship-7ba652b10cc6.herokuapp.com/
 
 #### Visit the live Website : **https://ebattleship-7ba652b10cc6.herokuapp.com/**
 
